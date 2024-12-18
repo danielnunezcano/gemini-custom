@@ -1,1 +1,1 @@
-from .GeminiCustom import generate_clean_response
+from .generative_model import generate_clean_response
