@@ -19,8 +19,8 @@ export GEMINI_MODEL="gemini-pro"
 ## Instalación
 1. **Clonar el repositorio:**
 ```bash
-git clone https://github.com/tuusuario/tu-repositorio.git
-cd tu-repositorio
+git clone https://github.com/danielnunezcano/gemini-custom.git
+cd gemini-custom
 ```
 
 2. **Instalar la librería:**
@@ -36,7 +36,7 @@ pip install google-generativeai
 ## Uso
 ### Ejemplo de código
 ```python
-from mi_libreria.generative_model import generate_clean_response
+from custom_gemini.generative_model import generate_clean_response
 
 # Pregunta y valor a enviar al modelo
 pregunta = "¿Cuál es la capital de"
@@ -60,9 +60,9 @@ print(respuesta)  # Salida esperada: "París"
 
 ## Estructura del Proyecto
 ```arduino
-mi_libreria/
+custom_gemini/
 │
-├── mi_libreria/
+├── custom_gemini/
 │   ├── __init__.py
 │   └── generative_model.py
 │
