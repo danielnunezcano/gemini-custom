@@ -5,9 +5,8 @@ import os
 genai.configure(api_key=os.environ["GEMINI_API_KEY"])
 model = genai.GenerativeModel(os.environ["GEMINI_MODEL"])
 
-def generate_clean_response(prompt, value):
-    response = model.generate_content(prompt + " " + value)
-    return response.text.rstrip().replace("```", "").replace("\n", "")
+def generate_clean_response(prompt):
+    return model.generate_content(prompt)
 
 def generate_clean_image_response(prompt, images):
     image_content = []

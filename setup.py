@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="custom_gemini",
-    version="1.0.0",
+    version="1.1.0",
     author="Daniel Núñez Cano",
     author_email="danielnunezcano@gmail.com",
     description="Librería para generar respuestas limpias usando Google Gemini API",

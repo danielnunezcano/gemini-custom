@@ -44,10 +44,9 @@ pip install google-generativeai
 ```python
 from custom_gemini.generative_model import generate_clean_response
 
-prompt = "¿Cuál es la capital de"
-value = "Francia?"
+prompt = "¿Cuál es la capital de Francia?"
 
-response = generate_clean_response(prompt, value)
+response = generate_clean_response(prompt)
 print(response)  # Salida esperada: "París"
 ```
 
@@ -81,7 +80,6 @@ print(response)
 - **Descripción**: Envía un prompt de texto al modelo Gemini y devuelve una respuesta limpia sin caracteres no deseados.
 - **Parámetros**:
     - `prompt` (str): El prompt que quieres enviar.
-    - `value` (str): Información adicional para completar el prompt.
 - **Retorno**: Respuesta en formato texto limpio.
 
 ### `generate_clean_image_response(prompt, images)`
