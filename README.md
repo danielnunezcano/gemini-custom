@@ -1,6 +1,6 @@
-# Librería de Generación de Respuestas con Google Gemini API
+# Librería de Generación de Respuestas Multimodales con Google Gemini API
 
-Esta librería permite generar respuestas limpias utilizando el modelo de lenguaje Gemini de Google a través de su API.
+Esta librería permite generar respuestas utilizando el modelo de lenguaje Gemini de Google a través de su API, soportando texto, imágenes y audio.
 
 ## Requisitos Previos
 
@@ -17,48 +17,90 @@ export GEMINI_MODEL="gemini-pro"
 ```
 
 ## Instalación
-1. **Clonar el repositorio:**
+
+*Nota: La estructura del proyecto y los pasos de instalación asumen una estructura similar al ejemplo. Adapta estos pasos según la organización real de tu proyecto.*
+
+1. **Clonar el repositorio (si aplica):**
 ```bash
 git clone https://github.com/danielnunezcano/gemini-custom.git
-cd gemini-custom
+cd <nombre_de_tu_repositorio>
 ```
 
-2. **Instalar la librería:**
+2. **Instalar la librería (si aplica):**
 ```bash
 pip install .
 ```
 
-3. **Instalar la dependencia google-generativeai (si no se instala automáticamente):**
+3. **Instalar las dependencias:**
 ```bash
 pip install google-generativeai
 ```
 
 ## Uso
+
 ### Ejemplo de código
+
+#### Generación de respuesta a partir de texto:
 ```python
 from custom_gemini.generative_model import generate_clean_response
 
-# Pregunta y valor a enviar al modelo
-pregunta = "¿Cuál es la capital de"
-valor = "Francia?"
+prompt = "¿Cuál es la capital de"
+value = "Francia?"
 
-# Generar respuesta limpia
-respuesta = generate_clean_response(pregunta, valor)
-print(respuesta)  # Salida esperada: "París"
+response = generate_clean_response(prompt, value)
+print(response)  # Salida esperada: "París"
 ```
 
-## Descripción de la Función
-`generate_clean_response(question_to_gemini, value)`
+#### Generación de respuesta a partir de imágenes:
+```python
+from custom_gemini.generative_model import generate_clean_image_response  # Reemplaza 'your_module' con el nombre de tu módulo
 
-- **Descripción**:
-    Envía una pregunta al modelo Gemini y devuelve una respuesta limpia sin caracteres no deseados.
+prompt = "¿Qué hay en estas imágenes?"
+image_paths = ["imagen1.jpg", "imagen2.png"]  # Asegúrate de que los archivos existan
+
+response = generate_clean_image_response(prompt, image_paths)
+print(response)
+```
+
+#### Generación de respuesta a partir de audio:
+
+```python
+from custom_gemini.generative_model import generate_clean_audio_response
+
+prompt = "Describe el contenido del audio."
+audio_path = "audio.mp3" # Asegúrate de que el archivo exista
+
+response = generate_clean_audio_response(prompt, audio_path)
+print(response)
+```
+
+## Descripción de las Funciones
+
+### `generate_clean_response(prompt, value)`
+
+- **Descripción**: Envía un prompt de texto al modelo Gemini y devuelve una respuesta limpia sin caracteres no deseados.
 - **Parámetros**:
-  - `question_to_gemini` (str): La pregunta que quieres hacer.
-  - `value` (str): Información adicional para completar la pregunta.
-- Retorno:
-- Respuesta en formato texto limpio.
+    - `prompt` (str): El prompt que quieres enviar.
+    - `value` (str): Información adicional para completar el prompt.
+- **Retorno**: Respuesta en formato texto limpio.
 
-## Estructura del Proyecto
+### `generate_clean_image_response(prompt, images)`
+
+- **Descripción**: Envía un prompt y una lista de imágenes al modelo Gemini y devuelve una respuesta de texto.
+- **Parámetros**:
+    - `prompt` (str): El prompt relacionado con las imágenes.
+    - `images` (list): Una lista de rutas a los archivos de imagen (en formato `JPEG`, `PNG`, etc.).
+- **Retorno**: Respuesta en formato texto.
+
+### `generate_clean_audio_response(prompt, audio)`
+
+- **Descripción**: Envía un prompt y un archivo de audio al modelo Gemini y devuelve una respuesta de texto.
+- **Parámetros**:
+    - `prompt` (str): El prompt relacionado con el audio.
+    - `audio` (str): La ruta al archivo de audio.
+- **Retorno**: Respuesta en formato texto.
+
+## Estructura del Proyecto (Ejemplo)
 ```arduino
 custom_gemini/
 │
@@ -77,4 +119,3 @@ Este proyecto está bajo la licencia MIT. Consulta el archivo `LICENSE` para má
 ## Autor
 **Daniel Núñez Cano**
 [Github](https://github.com/danielnunezcano)
-
