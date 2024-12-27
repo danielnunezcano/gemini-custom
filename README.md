@@ -42,47 +42,58 @@ pip install google-generativeai
 
 #### Generación de respuesta a partir de texto:
 ```python
-from custom_gemini.generative_model import generate_clean_response
+from custom_gemini.generative_model import generate_response
 
 prompt = "¿Cuál es la capital de Francia?"
 
-response = generate_clean_response(prompt)
+response = generate_response(prompt)
 print(response)  # Salida esperada: "París"
 ```
 
 #### Generación de respuesta a partir de imágenes:
 ```python
-from custom_gemini.generative_model import generate_clean_image_response  # Reemplaza 'your_module' con el nombre de tu módulo
+from custom_gemini.generative_model import generate_image_response  # Reemplaza 'your_module' con el nombre de tu módulo
 
 prompt = "¿Qué hay en estas imágenes?"
 image_paths = ["imagen1.jpg", "imagen2.png"]  # Asegúrate de que los archivos existan
 
-response = generate_clean_image_response(prompt, image_paths)
+response = generate_image_response(prompt, image_paths)
 print(response)
 ```
 
 #### Generación de respuesta a partir de audio:
 
 ```python
-from custom_gemini.generative_model import generate_clean_audio_response
+from custom_gemini.generative_model import generate_audio_response
 
 prompt = "Describe el contenido del audio."
 audio_path = "audio.mp3" # Asegúrate de que el archivo exista
 
-response = generate_clean_audio_response(prompt, audio_path)
+response = generate_audio_response(prompt, audio_path)
+print(response)
+```
+
+#### Generación de respuesta a partir de pdfs:
+```python
+from custom_gemini.generative_model import generate_image_response  # Reemplaza 'your_module' con el nombre de tu módulo
+
+prompt = "¿Qué hay en estos pdfs?"
+pdf_paths = ["file1.pdf", "file2.pdf"]  # Asegúrate de que los archivos existan
+
+response = generate_pdf_response(prompt, pdf_paths)
 print(response)
 ```
 
 ## Descripción de las Funciones
 
-### `generate_clean_response(prompt, value)`
+### `generate_response(prompt, value)`
 
 - **Descripción**: Envía un prompt de texto al modelo Gemini y devuelve una respuesta limpia sin caracteres no deseados.
 - **Parámetros**:
     - `prompt` (str): El prompt que quieres enviar.
 - **Retorno**: Respuesta en formato texto limpio.
 
-### `generate_clean_image_response(prompt, images)`
+### `generate_image_response(prompt, images)`
 
 - **Descripción**: Envía un prompt y una lista de imágenes al modelo Gemini y devuelve una respuesta de texto.
 - **Parámetros**:
@@ -90,12 +101,20 @@ print(response)
     - `images` (list): Una lista de rutas a los archivos de imagen (en formato `JPEG`, `PNG`, etc.).
 - **Retorno**: Respuesta en formato texto.
 
-### `generate_clean_audio_response(prompt, audio)`
+### `generate_audio_response(prompt, audio)`
 
 - **Descripción**: Envía un prompt y un archivo de audio al modelo Gemini y devuelve una respuesta de texto.
 - **Parámetros**:
     - `prompt` (str): El prompt relacionado con el audio.
     - `audio` (str): La ruta al archivo de audio.
+- **Retorno**: Respuesta en formato texto.
+
+### `generate_pdf_response(prompt, images)`
+
+- **Descripción**: Envía un prompt y una lista de imágenes al modelo Gemini y devuelve una respuesta de texto.
+- **Parámetros**:
+  - `prompt` (str): El prompt relacionado con las imágenes.
+  - `pdfs` (list): Una lista de rutas a los archivos de pdf.
 - **Retorno**: Respuesta en formato texto.
 
 ## Estructura del Proyecto (Ejemplo)
