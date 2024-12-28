@@ -22,13 +22,11 @@ def generate_image_response(prompt, images):
             print(f"Error: Archivo no encontrado {image_path}")
             continue
     image_content.append(prompt)
-    response = model.generate_content(image_content)
-    return response.text
+    return model.generate_content(image_content)
 
 def generate_audio_response(prompt, audio):
     myfile = genai.upload_file(audio)
-    result = model.generate_content([myfile, prompt])
-    return result.text
+    return model.generate_content([myfile, prompt])
 
 def generate_pdf_response(prompt, files):
     docs_data = []
@@ -37,6 +35,5 @@ def generate_pdf_response(prompt, files):
             doc_data = base64.standard_b64encode(doc_file.read()).decode("utf-8")
             docs_data.append({'mime_type': 'application/pdf', 'data': doc_data})
     docs_data.append(prompt)
-    response = model.generate_content(docs_data)
-    return response.text
+    return model.generate_content(docs_data)
 
