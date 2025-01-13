@@ -107,6 +107,7 @@ print(response)
 -   **Formatos de Imagen Soportados**:
   -   **PNG** - `image/png`
   -   **JPEG** - `image/jpeg`
+  -   **JPG** - `image/jpeg`
   -   **WEBP** - `image/webp`
   -   **HEIC** - `image/heic`
   -   **HEIF** - `image/heif`
