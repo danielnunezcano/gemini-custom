@@ -129,11 +129,19 @@ print(response)
 
 ### `generate_pdf_response(prompt, images)`
 
--   **Descripción**: Envía un prompt y una lista de PDFs al modelo Gemini y devuelve una respuesta de texto.
+-   **Descripción**: Envía un prompt y una lista de imagenes al modelo Gemini y devuelve una respuesta de texto.
 -   **Parámetros**:
   -   `prompt` (str): El prompt relacionado con las imágenes.
-  -   `pdfs` (list): Una lista de rutas a los archivos de pdf.
+  -   `images` (list): Una lista de rutas a los archivos de imagenes.
 -   **Retorno**: Respuesta en formato texto.
+
+### `generate_image(prompt, image_path)`
+
+-   **Descripción**: Envía un prompt y la ruta de donde crear la imagen.
+-   **Parámetros**:
+  -   `prompt` (str): El prompt relacionado con las imágenes.
+  -   `image_path` (str): Ruta de la imagen.
+-   **Retorno**: No devuelve nada, crea la imagen donde se le indica.
 
 ## Estructura del Proyecto (Ejemplo)
 
